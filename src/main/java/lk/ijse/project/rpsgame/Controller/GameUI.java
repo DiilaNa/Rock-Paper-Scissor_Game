@@ -3,6 +3,7 @@ package lk.ijse.project.rpsgame.Controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -63,6 +64,10 @@ public class GameUI implements Initializable {
     private Move PlayerMove;
 
     private Move ComputerMove;
+
+    private int playerScore = 0;
+
+    private int computerScore = 0;
 
     @FXML
     void paperBTNAction(ActionEvent event) {
@@ -141,14 +146,27 @@ public class GameUI implements Initializable {
         }
     }
     public void playerWin(){
+        playerScore++;
         result.setVisible(true);
         result.setText("You Win!");
+
+        if (playerScore == 5){
+            new Alert(Alert.AlertType.INFORMATION, "You Win The Game!").show();
+            return;
+        }
+        playerResult.setText(String.valueOf(playerScore));
     }
+
+
     public void computerWin(){
+        computerScore++;
         result.setVisible(true);
         result.setText("You Loose!");
-    }
-    public void setCount (){
 
+        if (computerScore == 5){
+            new Alert(Alert.AlertType.INFORMATION, "You Loose The Game!").show();
+            return;
+        }
+        computerResult.setText(String.valueOf(computerScore));
     }
 }
