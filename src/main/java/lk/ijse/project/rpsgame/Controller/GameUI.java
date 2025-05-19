@@ -21,6 +21,7 @@ public class GameUI implements Initializable {
         imagePaper.setImage(image2);
         Image image3 = new Image(getClass().getResourceAsStream("/images/iconScissors.png"));
         imageScissor.setImage(image3);
+        result.setVisible(false);
 
     }
 
@@ -56,16 +57,20 @@ public class GameUI implements Initializable {
 
     @FXML
     void paperBTNAction(ActionEvent event) {
-
+        setPlayerImage.setImage(new Image(getClass().getResourceAsStream("/images/iconPaper.png")));
     }
 
     @FXML
     void rockBTNAction(ActionEvent event) {
-
+        setPlayerImage.setImage(new Image(getClass().getResourceAsStream("/images/iconStone.png")));
     }
 
     @FXML
     void scissorBTNAction(ActionEvent event) {
+        setPlayerImage.setImage(new Image(getClass().getResourceAsStream("/images/iconScissors.png")));
+    }
+
+    public void computerMove() {
 
     }
 
