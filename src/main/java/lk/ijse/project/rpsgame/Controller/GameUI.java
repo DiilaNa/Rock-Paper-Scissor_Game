@@ -60,11 +60,17 @@ public class GameUI implements Initializable {
 
     private Image resultImage;
 
+    private Move PlayerMove;
+
+    private Move ComputerMove;
+
     @FXML
     void paperBTNAction(ActionEvent event) {
         resultImage = new Image(getClass().getResourceAsStream("/images/iconPaper.png"));
         setPlayerImage.setImage(resultImage);
         computerMove();
+        PlayerMove = Move.PAPER;
+        Winner();
     }
 
     @FXML
@@ -72,6 +78,8 @@ public class GameUI implements Initializable {
         resultImage = new Image(getClass().getResourceAsStream("/images/iconStone.png"));
         setPlayerImage.setImage(resultImage);
         computerMove();
+        PlayerMove = Move.ROCK;
+        Winner();
     }
 
     @FXML
@@ -79,6 +87,8 @@ public class GameUI implements Initializable {
         resultImage = new Image(getClass().getResourceAsStream("/images/iconScissors.png"));
         setPlayerImage.setImage(resultImage);
         computerMove();
+        PlayerMove = Move.SCISSOR;
+        Winner();
     }
 
     public void computerMove() {
@@ -87,19 +97,48 @@ public class GameUI implements Initializable {
             case 0:
                resultImage = new Image(getClass().getResourceAsStream("/images/iconScissors.png"));
                setComputerImage.setImage(resultImage);
+               ComputerMove = Move.SCISSOR;
                break;
             case 1:
                 resultImage = new Image(getClass().getResourceAsStream("/images/iconPaper.png"));
                 setComputerImage.setImage(resultImage);
+                ComputerMove = Move.PAPER;
                 break;
             case 2:
                 resultImage = new Image(getClass().getResourceAsStream("/images/iconStone.png"));
                 setComputerImage.setImage(resultImage);
+                ComputerMove = Move.ROCK;
                 break;
             default:
-                    out.println("Error");
-                    break;
+                out.println("Error");
+                break;
         }
     }
 
+    public void Winner(){
+        result.setVisible(true);
+        if (PlayerMove == ComputerMove){
+            result.setText("Its a Draw!");
+        }
+        if (PlayerMove == Move.ROCK) {
+            if (ComputerMove == Move.SCISSOR) {
+                result.setText("You win!");
+            }else if (ComputerMove == Move.PAPER) {
+                result.setText("You lose!");
+            }
+        } else if (PlayerMove == Move.PAPER) {
+            if (ComputerMove == Move.SCISSOR) {
+                result.setText("You Loose!");
+            }else if (ComputerMove == Move.ROCK) {
+                result.setText("You Win!");
+            }
+        }else if (PlayerMove == Move.SCISSOR) {
+            if (ComputerMove == Move.PAPER) {
+                result.setText("You Win!");
+            }else if (ComputerMove == Move.ROCK) {
+                result.setText("You Lose!");
+            }
+        }
+
+    }
 }
