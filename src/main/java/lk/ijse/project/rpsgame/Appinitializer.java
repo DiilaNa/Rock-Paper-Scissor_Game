@@ -17,6 +17,7 @@ public class Appinitializer extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/GameUI.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
+        scene.getStylesheets().add(getClass().getResource("/css/style.css").toExternalForm());
         stage.setResizable(false);
         stage.setScene(scene);
         stage.setTitle("RPS Game");
