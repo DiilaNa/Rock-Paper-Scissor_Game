@@ -122,23 +122,33 @@ public class GameUI implements Initializable {
         }
         if (PlayerMove == Move.ROCK) {
             if (ComputerMove == Move.SCISSOR) {
-                result.setText("You win!");
+              playerWin();
             }else if (ComputerMove == Move.PAPER) {
-                result.setText("You lose!");
+               computerWin();
             }
         } else if (PlayerMove == Move.PAPER) {
             if (ComputerMove == Move.SCISSOR) {
-                result.setText("You Loose!");
+               computerWin();
             }else if (ComputerMove == Move.ROCK) {
-                result.setText("You Win!");
+                playerWin();
             }
         }else if (PlayerMove == Move.SCISSOR) {
             if (ComputerMove == Move.PAPER) {
-                result.setText("You Win!");
+                playerWin();
             }else if (ComputerMove == Move.ROCK) {
-                result.setText("You Lose!");
+               computerWin();
             }
         }
+    }
+    public void playerWin(){
+        result.setVisible(true);
+        result.setText("You Win!");
+    }
+    public void computerWin(){
+        result.setVisible(true);
+        result.setText("You Loose!");
+    }
+    public void setCount (){
 
     }
 }
