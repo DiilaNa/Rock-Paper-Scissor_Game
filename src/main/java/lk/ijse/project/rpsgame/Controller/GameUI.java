@@ -7,6 +7,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import lk.ijse.project.rpsgame.Util.nameUtil;
 
 import java.net.URL;
 import java.util.Random;
@@ -27,6 +28,7 @@ public class GameUI implements Initializable {
         imageScissor.setImage(image3);
         result.setText("Choose an option to play");
 
+        playerName.setText(nameUtil.name);
     }
 
     @FXML
@@ -68,6 +70,7 @@ public class GameUI implements Initializable {
     private int playerScore = 0;
 
     private int computerScore = 0;
+
 
     @FXML
     void paperBTNAction(ActionEvent event) {

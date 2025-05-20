@@ -1,6 +1,7 @@
 module lk.ijse.project.rpsgame {
     requires javafx.controls;
     requires javafx.fxml;
+    requires jdk.jshell;
 
 
     opens lk.ijse.project.rpsgame to javafx.fxml;
