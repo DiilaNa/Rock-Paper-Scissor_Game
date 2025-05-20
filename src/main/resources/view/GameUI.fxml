@@ -54,20 +54,6 @@
             </Label>
          </children>
       </HBox>
-      <HBox layoutX="216.0" layoutY="224.0" prefHeight="150.0" prefWidth="420.0">
-         <children>
-            <ImageView fx:id="setPlayerImage" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="result" alignment="CENTER" prefHeight="186.0" prefWidth="120.0" text="Result " textFill="WHITE" wrapText="true">
-               <font>
-                  <Font name="Consolas Bold" size="22.0" />
-               </font>
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </Label>
-            <ImageView fx:id="setComputerImage" fitHeight="150.0" fitWidth="160.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
-         </children>
-      </HBox>
       <Pane layoutY="479.0" opacity="0.22" prefHeight="175.0" prefWidth="812.0" style="-fx-background-color: #d35400;" />
       <HBox layoutX="233.0" layoutY="495.0" prefHeight="126.0" prefWidth="344.0">
          <children>
@@ -127,5 +113,12 @@
             </VBox>
          </children>
       </HBox>
+      <Label fx:id="result" alignment="CENTER" layoutX="304.0" layoutY="316.0" prefHeight="62.0" prefWidth="194.0" text="Result " textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Consolas Bold" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="setComputerImage" fitHeight="150.0" fitWidth="160.0" layoutX="153.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="setPlayerImage" fitHeight="150.0" fitWidth="146.0" layoutX="504.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

@@ -27,7 +27,6 @@ public class GameUI implements Initializable {
         Image image3 = new Image(getClass().getResourceAsStream("/images/iconScissors.png"));
         imageScissor.setImage(image3);
         result.setText("Choose an option to play");
-
         playerName.setText(nameUtil.name);
     }
 
@@ -180,5 +179,6 @@ public class GameUI implements Initializable {
         computerScore = 0;
         computerResult.setText("0");
         playerResult.setText("0");
+        result.setText("Choose an option to play");
     }
 }
