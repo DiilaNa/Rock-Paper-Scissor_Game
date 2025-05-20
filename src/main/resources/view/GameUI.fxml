@@ -77,7 +77,7 @@
                      <graphic>
                         <ImageView fx:id="imageRock" fitHeight="102.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../java/lk/ijse/project/rpsgame/img/iconStone.png" />
+                              <Image url="@../../../../../../../Pictures/RPS%20Game/ic_stone.png" />
                            </image>
                         </ImageView>
                      </graphic>

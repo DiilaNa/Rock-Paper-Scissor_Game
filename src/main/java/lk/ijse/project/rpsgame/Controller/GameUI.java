@@ -25,7 +25,7 @@ public class GameUI implements Initializable {
         imagePaper.setImage(image2);
         Image image3 = new Image(getClass().getResourceAsStream("/images/iconScissors.png"));
         imageScissor.setImage(image3);
-        result.setVisible(false);
+        result.setText("Choose an option to play");
 
     }
 
@@ -96,7 +96,7 @@ public class GameUI implements Initializable {
         Winner();
     }
 
-    public void computerMove() {
+    private void computerMove() {
         int num = new Random().nextInt(3);
         switch (num) {
             case 0:
@@ -120,7 +120,7 @@ public class GameUI implements Initializable {
         }
     }
 
-    public void Winner(){
+    private void Winner(){
         result.setVisible(true);
         if (PlayerMove == ComputerMove){
             result.setText("Its a Draw!");
@@ -145,28 +145,37 @@ public class GameUI implements Initializable {
             }
         }
     }
-    public void playerWin(){
+    private void playerWin(){
         playerScore++;
         result.setVisible(true);
         result.setText("You Win!");
 
         if (playerScore == 5){
             new Alert(Alert.AlertType.INFORMATION, "You Win The Game!").show();
+            reset();
             return;
         }
         playerResult.setText(String.valueOf(playerScore));
     }
 
 
-    public void computerWin(){
+    private void computerWin(){
         computerScore++;
         result.setVisible(true);
         result.setText("You Loose!");
 
         if (computerScore == 5){
             new Alert(Alert.AlertType.INFORMATION, "You Loose The Game!").show();
+            reset();
             return;
         }
         computerResult.setText(String.valueOf(computerScore));
+    }
+
+    private void reset(){
+        playerScore = 0;
+        computerScore = 0;
+        computerResult.setText("0");
+        playerResult.setText("0");
     }
 }
